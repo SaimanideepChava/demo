@@ -1,0 +1,46 @@
+using System;
+
+namespace Day_2_Assignment
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int i, j = 0, n, max1 = 0, max2 = 0;
+            int[] array = new int[20];
+
+            Console.WriteLine("Enter the size of array :");
+            n = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter n elements in the array");
+            for (i = 0; i < n; i++)
+            {
+                Console.WriteLine("Element - {0} :", i);
+                array[i] = Convert.ToInt32(Console.ReadLine());
+            }
+            for (i = 0; i < n; i++)
+            {
+                if (max1 < array[i])
+                {
+                    max1 = array[i];
+                    j = i;
+                }
+            }
+                for (i = 0; i < n; i++)
+                {
+                    if (i == j)
+                    {
+                        i++;
+                        i--;
+                    }
+                    else
+                    {
+                        if (max2 < array[i])
+                        {
+                            max2 = array[i];
+                        }
+                    }
+                }
+                Console.WriteLine("Second largest element in the array are {0}:", max2);
+            }
+        }
+    }
